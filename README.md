@@ -20,7 +20,7 @@ Usage
 
 Start by applying an API Key on your account
 
-Next, create an instance of the client using the Oklinnk::withApiKey method
+Next, create an instance of the client using the Oklink::withApiKey method
 
     $client = Oklink::withApiKey($key, $secret);
     
