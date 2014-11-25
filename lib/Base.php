@@ -20,7 +20,7 @@ require_once(dirname(__FILE__) . '/ApiKeyAuthentication.php');
 class OklinkBase
 {
     const API_BASE = '/api/v1/';
-    const WEB_BASE = 'https://oklink.com/';
+    const WEB_BASE = 'https://www.oklink.com/';
     private $_rpc;
     private $_authentication;
 

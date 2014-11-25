@@ -1,7 +1,7 @@
 <?php
 require_once(dirname(__FILE__) .'/Base.php');
-class Oklink extends OklinkBase {
-    
+class Oklink extends OklinkBase{
+
     public static function withApiKey($key, $secret)
     {
         return new Oklink(new Oklink_ApiKeyAuthentication($key, $secret));
@@ -17,10 +17,9 @@ class Oklink extends OklinkBase {
         return new Oklink(new Oklink_OAuthAuthentication($oauth, $tokens));
     }
 
-   function __construct($authentication, $tokens=null, $apiKeySecret=null) {
-       parent::__construct($authentication, $tokens=null, $apiKeySecret=null);
-       // print "In SubClass constructor\n";
-   }
+    function __construct($authentication, $tokens=null, $apiKeySecret=null) {
+        parent::__construct($authentication, $tokens=null, $apiKeySecret=null);
+    }
 
     public function addressesAddress($params=null){
         return $this->get("addresses",$params);
@@ -78,13 +77,6 @@ class Oklink extends OklinkBase {
 
 
 
-    public function createApplicationsOauth($params=null){
-        return $this->post("oauth/applications",$params);
-    }
-
-
-
-
     public function applicationsOauth($params=null){
         return $this->get("oauth/applications",$params);
     }
@@ -94,6 +86,13 @@ class Oklink extends OklinkBase {
 
     public function applicationOauth($id,$params=null){
         return $this->get("oauth/applications/$id",$params);
+    }
+
+
+
+
+    public function createApplicationsOauth($params=null){
+        return $this->post("oauth/applications",$params);
     }
 
 
@@ -120,27 +119,6 @@ class Oklink extends OklinkBase {
 
 
 
-    public function sendMoneyTransaction($params=null){
-        return $this->put("transactions/send_money",$params);
-    }
-
-
-
-
-    public function simpleTransaction($params=null){
-        return $this->get("transactions",$params);
-    }
-
-
-
-
-    public function requestMoneyTransaction($params=null){
-        return $this->put("transactions/request_money",$params);
-    }
-
-
-
-
     public function transactionDetailTransaction($id,$params=null){
         return $this->get("transactions/$id",$params);
     }
@@ -156,7 +134,7 @@ class Oklink extends OklinkBase {
 
 
     public function cancelPayOrderTransaction($id,$params=null){
-        return $this->put("transactions/$id/cancel_payOrder",$params);
+        return $this->put("transactions/$id/cancel_payorder",$params);
     }
 
 
@@ -176,8 +154,36 @@ class Oklink extends OklinkBase {
 
 
 
+    public function simpleTransaction($params=null){
+        return $this->get("transactions",$params);
+    }
+
+
+
+
+    public function sendMoneyTransaction($params=null){
+        return $this->put("transactions/send_money",$params);
+    }
+
+
+
+
+    public function requestMoneyTransaction($params=null){
+        return $this->put("transactions/request_money",$params);
+    }
+
+
+
+
     public function userInfoUser($params=null){
         return $this->get("users",$params);
+    }
+
+
+
+
+    public function userBalanceUser($params=null){
+        return $this->get("users/balance",$params);
     }
 
 
