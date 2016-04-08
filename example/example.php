@@ -1,12 +1,12 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../lib/Oklink.php');
+require_once(dirname(__FILE__) . '/../lib/Bihang.php');
 
 $key = "[redacted]";
 $secret = "[redacted]";
 
 
-$client = Oklink::withApiKey($key, $secret);
+$client = Bihang::withApiKey($key, $secret);
 
 $params = array();
        
