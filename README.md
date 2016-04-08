@@ -6,7 +6,7 @@ PHP wrapper for the Bihang API
 Installation
 ============
 
-    git clone https://github.com/bihang/bihang-php
+    git clone https://github.com/bihanggit/bihang-php
     
 
 
